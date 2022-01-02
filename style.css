@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap');
+
+:root{
+    --purple:#814096;
+    --pink:#F83292;
+    --gradient:linear-gradient(90deg, var(--purple), var(--pink));
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none; outline: none;
+    text-transform: capitalize;
+}
+*::selection{
+    background:var(--pink);
+    color:#fff;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+body{
+    background: #f9f9f9;
+}
+section{
+    min-height: 100vh;
+    padding:0 9%;
+    padding-top: 7.5rem;
+    padding-bottom: 2rem;
+}
+header{
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    z-index: 1000;
+    align-items: center;
+}
+header .logo{
+    font-size: 2rem;
+    color: var(--purple);
+}
+header .logo span{
+    color: var(--pink);
+}
+header .navbar a{
+    font-size: 1.7rem;
+    color: var(--purple);
+    margin-left: 2rem;
+    transition: 0.3s;
+}
+header .navbar a:hover{
+    color: var(--pink);
+}
+header input{
+    display: none;
+}
+header label{
+    font-size: 3rem;
+    color: var(--purple);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+.home{
+    display: flex;
+    background: url(./home-bg-img.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+.home .image img{
+    width: 40vw;
+    animation: float 3s linear infinite;
+}
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(-2.2rem);
+    }
+}
+.home .content h3{
+    color: #333;
+    font-size: 5.5rem;
+    text-transform: uppercase;
+}
+.home .content h3 span{
+    color: var(--pink);
+}
+.home .content p{
+    color: #666;
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+.btn{
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 1.8rem;
+    border-radius: 5rem;
+    margin-top: 2rem;
+    transition: transform 0.5s;
+}
+.btn:hover{
+    transform: scale(1.1);
+}
+
+/* ################# APP FEATURES ####################### */
+.heading{
+    text-align: center;
+    background:var(--gradient);
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    padding:1rem;
+}
+.features .boxes{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box{
+    flex: 1 1 30rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    margin: 1.5rem;
+    border-radius: .5rem;
+    cursor: pointer;
+}
+.box:hover{
+    background: #ddd;
+    border: 2px solid rgba(0,0,0,.2);
+}
+.box img{
+    height: 15rem;
+}
+.box h3{
+    font-size: 2rem;
+    color: #333;
+    padding-top: 1rem;
+}
+.box p{
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    color: #333;
+    text-align: center;
+}
+/* ####################### ABOUT ####################### */
+.about{
+    background: url(./about-bg.png);
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
+    
+    
+}
+.column{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.about .column .about-img{
+    flex:1 1 40rem;
+}
+.about .column .about-img img{
+    width: 100%;
+}
+.about .column .about-content{
+    flex: 1 1 40rem;
+}
+.about .about-content h3{
+    color: #666;
+    font-size: 3rem;
+    padding-bottom: 2rem;
+}
+.about .about-content p{
+    font-size: 1.5rem;
+    color: #333;
+    padding-bottom: 1rem;
+}
+.about .about-content .btn{
+    margin-left: 1rem;
+}
+
+/* ########################## SUBSCRIBE ################################ */
+.subscribe{
+    background: url(./subscribe-bg.png) no-repeat;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    padding: 5rem 1rem;
+}
+.subscribe h3{
+    font-size: 3rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.subscribe p{
+    font-size: 1.6rem;
+    color: #fff;
+    padding-bottom: 2rem;
+    width: 70rem;
+    margin:2rem auto;
+}
+.subscribe input
+/* ################# MEDIA QUERIES #################### */
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:790px){
+    header label{
+        visibility: visible;
+        opacity: 1;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 1rem 2rem;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        border-top: .1rem solid rgba(0,0,0,.2);
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+        transition: 0.2s linear;
+
+    }
+    header .navbar a{
+        display: block;
+        margin: 2rem 0;
+        font-size: 2rem;
+    }
+    header input:checked ~ .navbar{
+        opacity: 1;
+        transform: scaleY(1);
+    }
+    header input:checked ~ label::before{
+        content: "\f00d";
+    }
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
